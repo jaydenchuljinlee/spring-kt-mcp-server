@@ -1,0 +1,54 @@
+spring:
+  application:
+    name: mcp
+  config:
+    import: optional:file:.env[.properties]
+  ai:
+    mcp:
+      server:
+        name: news-server
+        type: SYNC
+        annotation-scanner:
+          enabled: true
+        protocol: SSE
+        capabilities:
+          tool: true
+          resource: true
+          prompt: true
+          completion: true
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      chat:
+        options:
+          model: gpt-3.5-turbo
+
+server:
+  port: 8080
+
+news:
+  rss:
+    sources:
+      yonhap:
+        name: "연합뉴스"
+        url: "https://www.yna.co.kr/rss/economy.xml"
+        enabled: true
+      hankyung:
+        name: "한국경제"
+        url: "https://www.hankyung.com/feed/economy"
+        enabled: true
+      maeil:
+        name: "매일경제"
+        url: "https://www.mk.co.kr/rss/30100041/"
+        enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: mappings, health
+
+logging:
+  level:
+    io.modelcontextprotocol: TRACE
+    org.springframework.ai.mcp: TRACE
+    com.ai.mcp.news: DEBUG
