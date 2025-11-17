@@ -30,16 +30,29 @@ news:
     sources:
       yonhap:
         name: "연합뉴스"
-        url: "https://www.yna.co.kr/rss/economy.xml"
+        url: "https://www.yna.co.kr/rss/"
         enabled: true
+        categories:
+          economy: "economy.xml"
+          politics: "politics.xml"
+          all: "news.xml"
       hankyung:
         name: "한국경제"
-        url: "https://www.hankyung.com/feed/economy"
+        url: "https://www.hankyung.com/feed/"
         enabled: true
-      maeil:
+        categories:
+          economy: "economy"
+          politics: "politics"
+          all: "all-news"
+      mk:
         name: "매일경제"
-        url: "https://www.mk.co.kr/rss/30100041/"
+        url: "https://www.mk.co.kr/rss/"
         enabled: true
+        categories:
+          economy: "30100041"
+          politics: "30200030"
+          all: "40300001"
+
 
 management:
   endpoints:

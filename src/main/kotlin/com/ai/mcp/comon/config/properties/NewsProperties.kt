@@ -11,6 +11,7 @@ data class NewsProperties(
     data class RssSource(
         var name: String = "",
         var url: String = "",
-        var enabled: Boolean = true
+        var enabled: Boolean = true,
+        var categories: Map<String, String> = emptyMap()
     )
 }
