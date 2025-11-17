@@ -1,0 +1,11 @@
+spring:
+  main:
+    web-application-type: reactive
+    banner-mode: "off"
+    output:
+      ansi:
+        enabled: "never"
+
+logging:
+  level:
+    root: off

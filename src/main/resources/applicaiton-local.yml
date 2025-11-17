@@ -1,0 +1,9 @@
+spring:
+  main:
+    web-application-type: reactive
+
+logging:
+  level:
+    io.modelcontextprotocol: TRACE
+    org.springframework.ai.mcp: TRACE
+    com.ai.mcp.news: DEBUG

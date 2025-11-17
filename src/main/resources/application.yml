@@ -10,7 +10,8 @@ spring:
         type: SYNC
         annotation-scanner:
           enabled: true
-        protocol: SSE
+        # protocol: STREAMABLE
+        stdio: true
         capabilities:
           tool: true
           resource: true
@@ -60,8 +61,3 @@ management:
       exposure:
         include: mappings, health
 
-logging:
-  level:
-    io.modelcontextprotocol: TRACE
-    org.springframework.ai.mcp: TRACE
-    com.ai.mcp.news: DEBUG
