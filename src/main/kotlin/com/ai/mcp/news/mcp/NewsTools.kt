@@ -18,7 +18,7 @@ class NewsTools(
         name = "getNews",
         description = "카테고리, 뉴스사, 기간을 기준으로 국내 주요 뉴스를 가져옵니다."
     )
-    suspend fun getNews(
+    fun getNews(
         @McpToolParam(description = "뉴스 카테고리 (ECONOMY=경제, POLITICS=정치, ALL=전체)")
         category: NewsCategory? = NewsCategory.ECONOMY,
 
@@ -29,13 +29,13 @@ class NewsTools(
         period: String? = "6h",
 
         @McpToolParam(description = "뉴스 개수 제한") limit: Int = 10
-    ): List<News> {
+    ): List<News> = runBlocking {
         val req = NewsRequestDto(
             category = category?.key,
             sources = sources?.map { it.name.lowercase() },
             period = period,
             limit = limit
         )
-        return fetcher.fetchAll(req)
+        fetcher.fetchAll(req)
     }
 }

@@ -23,9 +23,6 @@ spring:
         options:
           model: gpt-3.5-turbo
 
-server:
-  port: 8080
-
 news:
   rss:
     sources:

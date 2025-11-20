@@ -1,6 +1,6 @@
 spring:
   main:
-    web-application-type: reactive
+    web-application-type: none
     banner-mode: "off"
     output:
       ansi:
