@@ -10,8 +10,8 @@ spring:
         type: SYNC
         annotation-scanner:
           enabled: true
-        # protocol: STREAMABLE
-        stdio: true
+        protocol: SSE
+        stdio: false
         capabilities:
           tool: true
           resource: true
