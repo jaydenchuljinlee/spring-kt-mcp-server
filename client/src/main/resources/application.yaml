@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: client
+
+  ai:
+    mcp:
+      client:
+        enabled: true
+        type: SYNC
+        sse:
+          connections:
+            newsServer:
+              url: http://localhost:8080/mcp
+
+server:
+  port: 8081
